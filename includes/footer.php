@@ -3,9 +3,11 @@
     <div class="row">
       <div class="col-lg-6 col-xl-6">
         <h5 class="footer-description">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga est ex ipsum natus dicta modi possimus totam rerum, harum cupiditate animi sunt eligendi aut soluta nulla tempore quasi laborum? Totam.
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga est ex ipsum natus dicta modi possimus totam rerum, harum cupiditate animi sunt eligendi aut soluta nulla tempore quasi laborum? Totam.
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga est ex ipsum natus dicta modi possimus totam rerum, harum cupiditate animi sunt eligendi aut soluta nulla tempore quasi laborum? Totam.
+          &nbsp;&nbsp;&nbsp;Taxes are a necessary part of our society, providing the funds for governments to operate and serve the people. Without taxes, many important public services, such as schools and hospitals, would not be possible. 
+          <br>
+          &nbsp;&nbsp;&nbsp;However, paying taxes can also be a burden for individuals and businesses. It is important for governments to ensure that their tax systems are fair and equitable, and that the burden of taxation is shared fairly among all members of society. 
+          <br>
+          &nbsp;&nbsp;&nbsp;By understanding the importance of taxes and working together to pay them, we can ensure the continued success and well-being of our communities.
         </h5>
       </div>
       <div class="col-lg-6 col-xl-6 links">

@@ -1,27 +1,50 @@
 <?php
   require_once "./includes/header.php";
+
+  if (!isset($_COOKIE['tax_user'])) {
+    header('location: ./index.php');
+
+    return;
+  }
+
+  $userId = $_COOKIE['tax_user'];
+
+  $sql = "SELECT * FROM users WHERE email = '$userId'";
+  $query = mysqli_query($connection, $sql);
+  $noOfRows = mysqli_num_rows($query);
+
+  if ($noOfRows <= 0) {
+    header('location: ./index.php');
+
+    return;
+  }
+
+  $data = mysqli_fetch_assoc($query);
 ?>
 
   <div class="reg-container container">
     <h4 class="register-text">Update your Taxism account</h4>
-    <form>
+
+    <div class="hide response-container" id="response-container"></div>
+
+    <form id="updateForm" onsubmit="return false">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="firstName" placeholder="John">
+        <input type="text" class="form-control" id="firstName" value="<?php echo $data['firstName'] ?>">
         <label for="firstName">First Name</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="lastName" placeholder="Doe">
+        <input type="text" class="form-control" id="lastName" value="<?php echo $data['lastName'] ?>">
         <label for="lastName">Last Name</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" placeholder="name@example.com" disabled>
+        <input type="email" class="form-control" id="email" value="<?php echo $data['email'] ?>" disabled>
         <label for="email">Email address</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="income" placeholder="₦10,000">
+        <input type="number" class="form-control" id="income" value="<?php echo $data['income'] ?>">
         <label for="income">Monthly Income</label>
       </div>
 
@@ -30,7 +53,10 @@
         <label for="password">Password</label>
       </div>
 
-      <button class="btn-black" type="button">Update profile</button>
+      <button class="btn-black" type="submit">
+        Update profile
+        <span id="loader" class="loader hide"></span>
+      </button>
     </form>
   </div>
 
