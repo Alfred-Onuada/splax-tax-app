@@ -206,3 +206,48 @@ table > thead > tr > td{
   text-align: center;
   width: 100%;
 }
+.accordion-item{
+  margin: 10px 0px;
+}
+.accordion-header{
+  height: 40px;
+  width: 100%;
+  display: flex;
+  background-color: whitesmoke;
+  padding: 0px 20px;
+  border-bottom: 1px solid black;
+}
+.accordion-body{
+  margin: 10px;
+}
+.steps > h4{
+  text-align: right;
+}
+.steps > p{
+  text-align: left;
+}
+.group{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.group > div{
+  width: 50%;
+}
+.group > div:nth-child(1) {
+  margin-right: 20px;
+}
+.group > div:nth-child(2) {
+  margin-left: 20px;
+}
+.subject{
+  height: 300px !important;
+}
+.contact-title{
+  font-size: 20px;
+  margin: 10px 0px;
+}
+.index-img{
+  width: 400px;
+  height: 200px;
+}

@@ -47,7 +47,8 @@
   }
 
   if (strlen($password) > 8) {
-    array_push($updates, "password = '$password'");
+    $hashedPassword = hash("sha256", $password);
+    array_push($updates, "password = '$hashedPassword'");
   }
 
   if (sizeof($updates) == 0) {

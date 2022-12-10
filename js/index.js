@@ -287,3 +287,43 @@ function pay() {
 if (document.getElementById('payForm')) {
   document.getElementById('payForm').addEventListener('submit', pay);
 }
+
+function contact() {
+  activateSpinner();
+  const email = document.getElementById('email').value;
+  const subject = document.getElementById('subject').value;
+  const body = document.getElementById('body').value;
+  
+  const data = { 
+    email,
+    subject,
+    body
+  }
+
+  function handleResponse(http) {
+    if (http.readyState === 4) {
+      if (http.status === 200) {
+        handleSuccess(JSON.parse(http.responseText).msg);
+
+        setTimeout(() => {
+          location.assign('http://localhost/websites/splax-tax-app/contact.php');
+        }, 3500);
+      } else {
+        handleError(JSON.parse(http.responseText).msg);
+      }
+
+      killSpinner();
+    }
+  }
+
+
+  // simulate 3.5 seconds wait time
+  setTimeout(() => {
+    const request = new xhr('http://localhost/websites/splax-tax-app/controllers/sendmail.php', handleResponse, 'POST');
+    request.send(data);
+  }, 3500);
+}
+
+if (document.getElementById('contactForm')) {
+  document.getElementById('contactForm').addEventListener('submit', contact);
+}
