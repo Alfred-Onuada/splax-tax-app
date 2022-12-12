@@ -77,7 +77,7 @@ function register() {
         handleSuccess(JSON.parse(http.responseText).msg);
 
         setTimeout(() => {
-          location.assign('http://localhost/websites/splax-tax-app/index.php');
+          location.assign('http://192.168.43.178/websites/splax-tax-app/index.php');
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
@@ -87,7 +87,7 @@ function register() {
     }
   }
 
-  const request = new xhr('http://localhost/websites/splax-tax-app/controllers/register.php', handleResponse, 'POST');
+  const request = new xhr('http://192.168.43.178/websites/splax-tax-app/controllers/register.php', handleResponse, 'POST');
   request.send(data);
 }
 
@@ -111,7 +111,7 @@ function login() {
         handleSuccess(JSON.parse(http.responseText).msg);
 
         setTimeout(() => {
-          location.assign('http://localhost/websites/splax-tax-app/index.php');
+          location.assign('http://192.168.43.178/websites/splax-tax-app/index.php');
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
@@ -121,7 +121,7 @@ function login() {
     }
   }
 
-  const request = new xhr('http://localhost/websites/splax-tax-app/controllers/login.php', handleResponse, 'POST');
+  const request = new xhr('http://192.168.43.178/websites/splax-tax-app/controllers/login.php', handleResponse, 'POST');
   request.send(data);
 }
 
@@ -152,7 +152,7 @@ function register() {
         handleSuccess(JSON.parse(http.responseText).msg);
 
         setTimeout(() => {
-          location.assign('http://localhost/websites/splax-tax-app/index.php');
+          location.assign('http://192.168.43.178/websites/splax-tax-app/index.php');
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
@@ -162,7 +162,7 @@ function register() {
     }
   }
 
-  const request = new xhr('http://localhost/websites/splax-tax-app/controllers/register.php', handleResponse, 'POST');
+  const request = new xhr('http://192.168.43.178/websites/splax-tax-app/controllers/register.php', handleResponse, 'POST');
   request.send(data);
 }
 
@@ -190,7 +190,7 @@ function update() {
         handleSuccess(JSON.parse(http.responseText).msg);
 
         setTimeout(() => {
-          location.assign('http://localhost/websites/splax-tax-app/index.php');
+          location.assign('http://192.168.43.178/websites/splax-tax-app/index.php');
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
@@ -200,7 +200,7 @@ function update() {
     }
   }
 
-  const request = new xhr('http://localhost/websites/splax-tax-app/controllers/updateProfile.php', handleResponse, 'POST');
+  const request = new xhr('http://192.168.43.178/websites/splax-tax-app/controllers/updateProfile.php', handleResponse, 'POST');
   request.send(data);
 }
 
@@ -266,7 +266,7 @@ function pay() {
         handleSuccess(JSON.parse(http.responseText).msg);
 
         setTimeout(() => {
-          location.assign('http://localhost/websites/splax-tax-app/history.php');
+          location.assign('http://192.168.43.178/websites/splax-tax-app/history.php');
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
@@ -279,7 +279,7 @@ function pay() {
 
   // simulate 3.5 seconds wait time
   setTimeout(() => {
-    const request = new xhr('http://localhost/websites/splax-tax-app/controllers/payTax.php', handleResponse, 'POST');
+    const request = new xhr('http://192.168.43.178/websites/splax-tax-app/controllers/payTax.php', handleResponse, 'POST');
     request.send(data);
   }, 3500);
 }
@@ -306,7 +306,7 @@ function contact() {
         handleSuccess(JSON.parse(http.responseText).msg);
 
         setTimeout(() => {
-          location.assign('http://localhost/websites/splax-tax-app/contact.php');
+          location.assign('http://192.168.43.178/websites/splax-tax-app/contact.php');
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
@@ -319,7 +319,7 @@ function contact() {
 
   // simulate 3.5 seconds wait time
   setTimeout(() => {
-    const request = new xhr('http://localhost/websites/splax-tax-app/controllers/sendmail.php', handleResponse, 'POST');
+    const request = new xhr('http://192.168.43.178/websites/splax-tax-app/controllers/sendmail.php', handleResponse, 'POST');
     request.send(data);
   }, 3500);
 }
@@ -335,7 +335,14 @@ window.addEventListener('DOMContentLoaded', () => {
   [].forEach.call(activeLinks, (link) => {
     link.parentNode.classList.add('active');
   })
-})
+});
+
+if (document.getElementsByClassName('reg-container')) {
+  [].forEach.call(document.getElementsByClassName('reg-container'), (elem) => {
+    elem.style.paddingBottom = '60px';
+    elem.style.paddingTop = '60px';
+  })
+}
 
 if (document.getElementsByClassName('pay-page').length) {
   [].forEach.call(document.getElementsByClassName('pay-page'), (elem) => {
@@ -343,8 +350,8 @@ if (document.getElementsByClassName('pay-page').length) {
     elem.style.display = 'flex';
     elem.style.placeItems = 'center';
     elem.style.flexDirection = 'column';
-  })
-
+  });
+  
   //JQuery
   $('.tax').each(function () {
     $(this).prop('Counter', 0).animate({
@@ -404,4 +411,10 @@ function calculateTax() {
 
   tax.textContent = taxAmount.toFixed(2);
 
+}
+
+function navEvent() {
+  const navbar = document.getElementById('navbar-responsive');
+
+  navbar.classList.toggle('navbar-hide')
 }

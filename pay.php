@@ -89,17 +89,17 @@
               <input type="text" id="userId" value="<?php echo $userId ?>" hidden disabled>
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="card-number" placeholder="919-4242-222" onchange="format(this, 'cardNumber')" required>
+                <input type="text" class="form-control" id="card-number" maxlength="19" pattern="\d{4}\s\d{4}\s\d{4}\s\d{4}" placeholder="919-4242-222" onkeyup="format(this, 'cardNumber')" required>
                 <label for="card-number">Card Number</label>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="date" placeholder="12/99" maxlength="5" onchange="format(this, 'expiryDate')" required>
+                <input type="text" class="form-control" id="date" placeholder="12/99" maxlength="5" pattern="\d{2}\/\d{2}" onkeyup="format(this, 'expiryDate')" required>
                 <label for="date">Expiry Date</label>
               </div>
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="cvv" placeholder="***" maxlength="3" required>
+                <input type="text" class="form-control" id="cvv" placeholder="***" maxlength="3" pattern="\d*" required>
                 <label for="cvv">CVV</label>
               </div>
 

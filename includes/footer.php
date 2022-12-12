@@ -1,7 +1,7 @@
 
   <footer>
     <div class="row">
-      <div class="col-lg-6 col-xl-6">
+      <div class="col-md-12 col-lg-6 col-xl-6">
         <h5 class="footer-description">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Taxes are a necessary part of our society, providing the funds for governments to operate and serve the people. Without taxes, many important public services, such as schools and hospitals, would not be possible. 
           <br>
@@ -10,7 +10,7 @@
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;By understanding the importance of taxes and working together to pay them, we can ensure the continued success and well-being of our communities.
         </h5>
       </div>
-      <div class="col-lg-6 col-xl-6 links">
+      <div class="col-md-12 col-lg-6 col-xl-6 links">
         <h5 class="useful-links">Useful Links</h5>
         <ul type="none" class="footer-links">
           <li>&rightarrow; <a href="./about-us.php">About Us</a></li>

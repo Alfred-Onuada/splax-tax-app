@@ -27,37 +27,39 @@
       <div class="tax-history">
         <h6>From <?php echo $data['year'] ?></h6>
 
-        <table class="table table-striped">
-          <thead>
-            <td>S/N</td>
-            <td>Month</td>
-            <td>Estimated income</td>
-            <td>Tax</td>
-            <td>Due date</td>
-            <td>Date paid</td>
-          </thead>
-          <tbody>
-            <?php
-              $sql = "SELECT * FROM `tax_history` WHERE userId = '$userId' AND year = '$year'";
-              $taxQuery = mysqli_query($connection, $sql);
-
-              $rowNo = mysqli_num_rows($taxQuery);
-              while ($taxData = mysqli_fetch_assoc($taxQuery)) {
-            ?>
-              <tr>
-                <td><?php echo $rowNo; ?></td>
-                <td><?php echo $taxData['month'] ?></td>
-                <td>₦<?php echo number_format($taxData['estimatedIncome']) ?></td>
-                <td>₦<?php echo number_format($taxData['tax']) ?></td>
-                <td><?php echo date('M j Y g:i A', strtotime($taxData['due']))?></td>
-                <td><?php echo date('M j Y g:i A', strtotime($taxData['due'])) ?></td>
-              </tr>
-            <?php
-                $rowNo--;
-              }
-            ?>
-          </tbody>
-        </table>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <td>S/N</td>
+              <td>Month</td>
+              <td>Estimated income</td>
+              <td>Tax</td>
+              <td>Due date</td>
+              <td>Date paid</td>
+            </thead>
+            <tbody>
+              <?php
+                $sql = "SELECT * FROM `tax_history` WHERE userId = '$userId' AND year = '$year'";
+                $taxQuery = mysqli_query($connection, $sql);
+  
+                $rowNo = mysqli_num_rows($taxQuery);
+                while ($taxData = mysqli_fetch_assoc($taxQuery)) {
+              ?>
+                <tr>
+                  <td><?php echo $rowNo; ?></td>
+                  <td><?php echo $taxData['month'] ?></td>
+                  <td>₦<?php echo number_format($taxData['estimatedIncome']) ?></td>
+                  <td>₦<?php echo number_format($taxData['tax']) ?></td>
+                  <td><?php echo date('M j Y g:i A', strtotime($taxData['due']))?></td>
+                  <td><?php echo date('M j Y g:i A', strtotime($taxData['due'])) ?></td>
+                </tr>
+              <?php
+                  $rowNo--;
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
       </div>
 
     <?php

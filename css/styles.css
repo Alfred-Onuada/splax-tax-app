@@ -264,3 +264,90 @@ table > thead > tr > td{
   display: flex;
   place-items: center;
 }
+.hamburger{
+  display: hide;
+}
+
+@media (max-width: 575px) {
+  .hamburger{
+    display: block !important;
+    cursor: pointer;
+  }
+  .hamburger-row{
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+  }
+  .hamburger > div{
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    border-radius: 5px;
+    margin: 5px 0px;
+  }
+  .row{
+    margin: 0px !important;
+  }
+  img{
+    max-width: 100%;
+  }
+  .footer-description{
+    padding: 0px 15px;
+  }
+  .links{
+    text-align: center;
+    padding-top: 30px;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+  .reverse-row{
+    flex-direction: column-reverse;
+  }
+  .reg-container{
+    width: 100% !important;
+  }
+  .navbar-hide{
+    display: none;
+  }
+  .title{
+    padding-left: 20px;
+  }
+  .navbar-row{
+    position: relative;
+  }
+  header{
+    z-index: 100;
+  }
+  .navbar-links{
+    position: absolute;
+    margin-top: 63px !important;
+    background-color: white;
+    height: fit-content;
+    padding-bottom: 30px;
+    width: 90% !important;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    border-bottom-right-radius: 10px;
+  }
+  .navbar-links > ul{
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar-links > ul > li,
+  .dropmenu{
+    margin: 20px 0px;
+    font-size: 20px;
+  }
+  .nav > li:hover,
+  .nav > .dropdown > li:hover,
+  .dropdown-menu > li:hover{
+    transform: scale(1);
+  }
+  .active{
+    transform: scale(1);
+  }
+  form{
+    position: relative;
+    z-index: 1;
+  }
+}

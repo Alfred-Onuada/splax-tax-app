@@ -16,11 +16,17 @@
     require_once "./config/db.php";
   ?>
   <header>
-    <div class="row">
-      <div class="col-md-3 col-lg-3">
+    <div class="row navbar-row">
+      <div class="col-md-3 col-lg-3 col-sm-12 hamburger-row">
         <h1 class="title">Taxism</h1>
+
+        <div onclick="navEvent()" class="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-      <div class="col-md-9 col-lg-9 nav-pane">
+      <div id="navbar-responsive" class="col-sm-12 col-md-9 col-lg-9 nav-pane navbar-hide navbar-links">
         <ul class="nav" type="none">
           <li><a href="./index.php">Home</a></li>
           <li><a href="./about-us.php">About Us</a></li>
@@ -28,13 +34,11 @@
           <li><a href="./how-it-works.php">How it works</a></li>
           <li><a href="./faqs.php">FAQs</a></li>
 
-          <div class="nav-division"></div>
-
           <?php
             if (isset($_COOKIE['tax_user'])) {
           ?>
-            <div class="dropdown">
-              <li data-bs-toggle="dropdown" aria-expanded="false"><a href="#">Profile</a></li>
+            <div class="dropdown dropmenu">
+              <li data-bs-toggle="dropdown" aria-expanded="false"><a href="#">Profile &#9660</a></li>
               <div class="dropdown-menu">
                 <li><a href="./edit-profile.php">Edit Profile</a></li>
                 <li><a href="./history.php">Tax History</a></li>

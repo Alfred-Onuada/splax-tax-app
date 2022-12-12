@@ -3,7 +3,7 @@
 ?>
 
   <div class="container">
-    <div class="row about-us-row">
+    <div class="row about-us-row reverse-row">
       <div class="col-md-6 col-lg-6">
         <p>Taxism is a tax calculation website that offers a fast and easy way for individuals and businesses to estimate their tax liability or refund. Our website provides a simple and user-friendly interface that allows users to quickly enter their income, deductions, and other relevant information to calculate their estimated taxes.</p>
         <p>At Taxism, we believe that everyone should have access to accurate and reliable tax information. That's why we have developed our website to be accessible to users of all skill levels, from first-time filers to experienced tax professionals. Our website is also mobile-friendly, so you can use it on your phone or tablet as well as your computer.</p>
