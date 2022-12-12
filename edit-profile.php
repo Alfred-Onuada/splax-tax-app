@@ -45,7 +45,7 @@
 
       <div class="form-floating mb-3">
         <input type="number" class="form-control" id="income" value="<?php echo $data['income'] ?>">
-        <label for="income">Monthly Income</label>
+        <label for="income">Monthly Income (taxable income)</label>
       </div>
 
       <div class="form-floating mb-3">

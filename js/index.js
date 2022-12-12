@@ -327,3 +327,81 @@ function contact() {
 if (document.getElementById('contactForm')) {
   document.getElementById('contactForm').addEventListener('submit', contact);
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  const currentPage = location.href.split('/').reverse()[0];
+  const activeLinks = document.querySelectorAll(`a[href='./${currentPage}']`);
+
+  [].forEach.call(activeLinks, (link) => {
+    link.parentNode.classList.add('active');
+  })
+})
+
+if (document.getElementsByClassName('pay-page').length) {
+  [].forEach.call(document.getElementsByClassName('pay-page'), (elem) => {
+    elem.style.minHeight = (window.innerHeight - 75) + 'px';
+    elem.style.display = 'flex';
+    elem.style.placeItems = 'center';
+    elem.style.flexDirection = 'column';
+  })
+
+  //JQuery
+  $('.tax').each(function () {
+    $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 3500,
+        easing: 'swing',
+        step: function (now) {
+          $(this).text(Math.ceil(now));
+        }
+    });
+  });
+
+  $('.income').each(function () {
+    $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+    }, {
+        duration: 4500,
+        easing: 'swing',
+        step: function (now) {
+          $(this).text(Math.ceil(now));
+        }
+    });
+  });
+}
+
+function calculateTax() {
+  const income = document.getElementById('income').value;
+  const deductions = document.getElementById('deductions').value;
+  const tax = document.getElementById('tax');
+
+  if (deductions > income) {
+    handleError("Income cannot be less than allowable deductions");
+    return;
+  }
+
+  let taxableIncome = income - deductions;
+  let taxAmount = 0;
+
+  if (taxableIncome > 100000) {
+    taxAmount += 100000 * .1;
+    taxableIncome -= 100000;
+
+    if (taxableIncome > 250000) {
+      taxAmount += 250000 *.25;
+      taxableIncome -= 250000;
+
+      if (taxableIncome > 0) {
+        taxAmount += taxableIncome * .3;
+      }
+    } else {
+      taxAmount += taxableIncome * .25;
+    }
+  } else {
+    taxAmount += taxableIncome * .1;
+  }
+
+  tax.textContent = taxAmount.toFixed(2);
+
+}

@@ -46,6 +46,9 @@ header{
 .dropdown-menu > li:hover{
   transform: scale(1.3);
 }
+.active{
+  transform: scale(1.3);
+}
 .dropdown-menu > li{
   text-align: right;
   margin: 10px 0px;
@@ -250,4 +253,14 @@ table > thead > tr > td{
 .index-img{
   width: 400px;
   height: 200px;
+}
+.tax-img,
+.faqs-img,
+.pay-img{
+  height: 350px !important;
+  width: 500px !important;
+}
+.about-us-row{
+  display: flex;
+  place-items: center;
 }

@@ -14,17 +14,34 @@
   $data = mysqli_fetch_assoc($query);
 
   // tax brackets
+  // first 100k - 10%
+  // next 250k - 25%
+  // anything after that - 30%
+
   $tax = 0;
-  if ($data['income'] <= 50000) {
-    $tax = $data['income'] * .15;
-  } else if ($data['income'] <= 150000) {
-    $tax = $data['income'] * .3;
+  $income  = $data['income'];
+
+  if ($income > 100000) {
+    $tax += (100000 * .1);
+    $income -= 100000;
+
+    if ($income > 250000) {
+      $tax += (250000 * .25);
+      $income -= 250000;
+
+      if ($income > 0) {
+        $tax += ($income * .3);
+      }
+
+    } else {
+      $tax += ($income * .25);
+    }
   } else {
-    $tax = $data['income'] * .45;
+    $tax += ($income * .1);
   }
 ?>
 
-  <div class="container">
+  <div class="pay-page container">
     <?php
       $currentMonth = date("F");
       $currentYear = date("Y");
@@ -35,11 +52,13 @@
 
       if ($noOfRows > 0) {
     ?>
+      <img class="pay-img" src="./imgs/10820.jpg" alt="all done image">
       <h5>Hurray 🎉, You have already paid the taxes for this month.</h5>
     <?php
       } else {
     ?>
-      <h5>You owe the government ₦<?php echo $tax ?> based on your ₦<?php echo $data['income'] ?> salary this month</h5>
+      <img class="pay-img" src="./imgs/Hand holding phone with digital wallet service and sending money.jpg" alt="owe">
+      <h5>You owe the government <b>₦</b><b class="tax"><?php echo $tax ?></b> based on your ₦<span class="income"><?php echo $data['income'] ?></span> salary this month</h5>
 
       <button class="btn-black btn-small" data-bs-toggle="modal" data-bs-target="#paymentModal">Pay the government</button>
     <?php
