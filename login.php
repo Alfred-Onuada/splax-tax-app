@@ -8,13 +8,13 @@
     <div class="hide response-container" id="response-container"></div>
 
     <form id="logForm" onsubmit="return false">
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="email" required>
         <label for="email">Email address</label>
       </div>
 
-      <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" placeholder="********" required>
+      <div class="form-floating">
+        <input type="password" class="form-control" id="password" required>
         <label for="password">Password</label>
       </div>
 

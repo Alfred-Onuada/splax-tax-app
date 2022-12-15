@@ -2,7 +2,7 @@ const networkUrl = 'http://192.168.43.178/websites/splax-tax-app';
 const localUrl = 'http://localhost/websites/splax-tax-app';
 
 const env = 'LOCAL';
-const baseUrl = env === 'NETWORK' ? localUrl : networkUrl;
+const baseUrl = env === 'LOCAL' ? localUrl : networkUrl;
 
 class xhr{
   url = null;
@@ -397,8 +397,8 @@ if (document.getElementsByClassName('pay-page').length) {
 }
 
 function calculateTax() {
-  const income = document.getElementById('income').value;
-  const deductions = document.getElementById('deductions').value;
+  const income = +(document.getElementById('income').value);
+  const deductions = +(document.getElementById('deductions').value);
   const tax = document.getElementById('tax');
 
   if (deductions > income) {
@@ -451,4 +451,36 @@ function navEvent() {
 
     container.removeEventListener('click', closeNavOnBodyClick);
   }
+}
+
+// handles form label animation
+const inputsOnPage = document.querySelectorAll('input');
+if (inputsOnPage.length) {
+  labelAnimationFunc = (input) => {
+    let label = input.parentNode.querySelector('label');
+
+    if (input.value.length > 0) {
+      if (label) {
+        label.classList.add('label-active')
+      }
+    } else {
+      if (label) {
+        label.classList.remove('label-active')
+      }
+    }
+  }
+
+  [].forEach.call(inputsOnPage, input => {
+    input.addEventListener('focus', () => { 
+      labelAnimationFunc(input)
+    })
+
+    input.addEventListener('blur', () => { 
+      labelAnimationFunc(input)
+    })
+
+    input.addEventListener('keyup', () => { 
+      labelAnimationFunc(input)
+    })
+  })
 }

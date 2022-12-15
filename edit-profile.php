@@ -40,7 +40,7 @@
 
       <div class="form-floating mb-3">
         <input type="email" class="form-control" id="email" value="<?php echo $data['email'] ?>" disabled>
-        <label for="email">Email address</label>
+        <label for="email" class="label-active">Email address</label>
       </div>
 
       <div class="form-floating mb-3">
@@ -49,7 +49,7 @@
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" placeholder="********">
+        <input type="password" class="form-control" id="password">
         <label for="password">Password</label>
       </div>
 

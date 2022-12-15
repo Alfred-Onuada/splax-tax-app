@@ -36,12 +36,12 @@
 
     <div class="demo-calculator">
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="income" placeholder="₦10000" required onkeyup="calculateTax()">
+        <input type="number" class="form-control" id="income" required onkeyup="calculateTax()">
         <label for="income">Total Income</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="deductions" placeholder="₦2000" required onkeyup="calculateTax()">
+        <input type="number" class="form-control" id="deductions" required onkeyup="calculateTax()">
         <label for="income">Allowable deductions</label>
       </div>
 

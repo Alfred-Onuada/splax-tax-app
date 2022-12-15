@@ -9,27 +9,27 @@
 
     <form id="regForm" onsubmit="return false">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="firstName" placeholder="John" required>
+        <input type="text" class="form-control" id="firstName" required>
         <label for="firstName">First Name</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="lastName" placeholder="Doe" required>
+        <input type="text" class="form-control" id="lastName" required>
         <label for="lastName">Last Name</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+        <input type="email" class="form-control" id="email" required>
         <label for="email">Email address</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="income" placeholder="₦10,000" required>
+        <input type="number" class="form-control" id="income" required>
         <label for="income">Monthly Income (taxable income)</label>
       </div>
 
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="password" placeholder="********" required>
+        <input type="password" class="form-control" id="password" required>
         <label for="password">Password</label>
       </div>
 

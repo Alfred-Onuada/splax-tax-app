@@ -6,7 +6,10 @@
   font-family: Mulish !important;
   font-display: swap;
 }
-
+body{
+  padding: 0;
+  margin: 0;
+}
 header{
   height: 75px;
   width: 100%;
@@ -115,6 +118,34 @@ footer{
 .container{
   margin: 40px 0px;
   text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+.form-floating{
+  width: 100%;
+  margin: 10px 0px;
+  position: relative;
+  border-radius: 5px;
+}
+.form-floating > label{
+  position: absolute;
+  top: 18px;
+  left: 10px;
+  font-size: 18px;
+  color: grey;
+  transition: all .2s;
+}
+.form-floating > input{
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.label-active{
+  font-size: 14px !important;
+  top: 5px !important;
+}
+.form-control{
+  width: 100%;
+  height: 60px;
 }
 .register-text{
   font-size: 24px;
@@ -127,6 +158,7 @@ footer{
   border: 1px solid black !important;
   border-radius: 5px !important;
   transition: .2s all;
+  font-size: 18px;
 }
 .btn-black:hover{
   color: white;
@@ -267,6 +299,10 @@ table > thead > tr > td{
 }
 .hamburger{
   display: hide;
+}
+.nav{
+  flex-direction: row;
+  display: flex;
 }
 
 @media (max-width: 575px) {
