@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-  <div class="reg-container container">
+  <div class="reg-container container fill-screen">
     <h4 class="register-text">Welcome back to Taxism</h4>
 
     <div class="hide response-container" id="response-container"></div>

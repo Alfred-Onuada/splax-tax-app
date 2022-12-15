@@ -75,6 +75,7 @@ footer{
   font-size: 16px;
   padding: 0px 95px;
   line-height: 22px;
+  text-align: center;
 }
 .useful-links{
   font-size: 22px;
@@ -298,6 +299,9 @@ table > thead > tr > td{
     text-align: center;
     padding-top: 30px;
     padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+  .footer-links{
     padding-left: 0px !important;
   }
   .reverse-row{

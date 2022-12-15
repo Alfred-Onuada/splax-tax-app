@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-  <div class="container">
+  <div class="container fill-screen">
     <h5>Have a look at your tax payment history</h5>
 
     <?php
