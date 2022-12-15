@@ -88,6 +88,7 @@ footer{
   padding-right: 300px !important;
 }
 .footer-links > li{
+  margin: 10px 0px;
   transition: .2s all;
 }
 .footer-links > li > a{
@@ -118,8 +119,6 @@ footer{
 .container{
   margin: 40px 0px;
   text-align: center;
-  width: 100%;
-  margin: 0 auto;
 }
 .form-floating{
   width: 100%;

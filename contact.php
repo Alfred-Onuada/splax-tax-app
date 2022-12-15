@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-  <div class="container">
+  <div class="container contact-form">
     <form id="contactForm" onsubmit="return false">
       <h4 class="contact-title">Shoot us a mail</h4>
 

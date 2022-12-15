@@ -60,6 +60,7 @@
             </tbody>
           </table>
         </div>
+        <br>
       </div>
 
     <?php
