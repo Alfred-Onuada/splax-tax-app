@@ -60,7 +60,7 @@
       <img class="pay-img" src="./imgs/Hand holding phone with digital wallet service and sending money.jpg" alt="owe">
       <h5>You owe the government <b>₦</b><b class="tax"><?php echo $tax ?></b> based on your ₦<span class="income"><?php echo $data['income'] ?></span> salary this month</h5>
 
-      <button class="btn-black btn-small" data-bs-toggle="modal" data-bs-target="#paymentModal">Pay the government</button>
+      <button class="btn-black btn-small" onclick="activateModal()">Pay the government</button>
     <?php
       }
 
@@ -73,12 +73,12 @@
   ?>
 
     <!-- Modal -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="paymentModalLabel">Splax Payments IO</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" class="btn-close" onclick="closeModal()" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="hide response-container" id="response-container"></div>

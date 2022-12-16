@@ -484,3 +484,32 @@ if (inputsOnPage.length) {
     })
   })
 }
+
+
+function activateModal() {
+  const modal = document.getElementById('paymentModal');
+  const body = document.body;
+
+  body.classList.add('modal-open')
+  body.style.overflow = 'hidden';
+  body.style.paddingRight = '17px';
+
+  modal.classList.add('show');
+  modal.style.display = 'block';
+  modal.style.position = 'absolute';
+  modal.style.background = 'rgba(0, 0, 0, 0.5)';
+}
+
+function closeModal() {
+  const modal = document.getElementById('paymentModal');
+  const body = document.body;
+
+  body.classList.remove('modal-open')
+  body.style.overflow = 'auto';
+  body.style.paddingRight = '0';
+
+  modal.classList.remove('show');
+  modal.style.display = 'none';
+  modal.style.position = 'unset';
+  modal.style.background = 'none';
+}
