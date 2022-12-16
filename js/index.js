@@ -513,3 +513,15 @@ function closeModal() {
   modal.style.position = 'unset';
   modal.style.background = 'none';
 }
+
+function toggleAccordion(elem) {
+  const details = elem.parentNode.children[1];
+
+  details.classList.toggle('show');
+}
+
+function activateDropdown() {
+  const dropdown = document.getElementById('dropdownMenu');
+  
+  dropdown.classList.toggle('hide')
+}

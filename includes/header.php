@@ -37,15 +37,15 @@
           <?php
             if (isset($_COOKIE['tax_user'])) {
           ?>
-            <!-- <div class="dropdown dropmenu">
-              <li data-bs-toggle="dropdown" aria-expanded="false"><a href="#">Profile &#9660</a></li>
-              <div class="dropdown-menu">
+            <div class="dropdown dropmenu">
+              <li onclick="activateDropdown()"><a href="#">Profile &#9660</a></li>
+              <div id="dropdownMenu" class="dropdown-menu hide">
                 <li><a href="./edit-profile.php">Edit Profile</a></li>
                 <li><a href="./history.php">Tax History</a></li>
                 <li><a href="./pay.php">Pay Taxes</a></li>
                 <li><a href="./logout.php">Logout</a></li>
               </div>
-            </div> -->
+            </div>
           <?php
             } else {
           ?>

@@ -31,6 +31,9 @@ header{
   place-items: center;
   place-content: flex-end;
 }
+.dropdown{
+  position: relative;
+}
 .nav > li,
 .nav > .dropdown > li,
 .dropdown-menu > li{
@@ -54,16 +57,19 @@ header{
 }
 .dropdown-menu > li{
   text-align: right;
-  margin: 10px 0px;
+  margin: 10px 30px 10px 0px;
 }
 .nav-division{
   width: 150px;
 }
 .dropdown-menu{
   width: 250px;
-  padding: 10px 25px !important;
-  margin-top: 17px !important;
   border-radius: 0px 0px 5px 5px !important;
+  position: absolute;
+  top: 49px;
+  right: 0;
+  background: white;
+  border: 1px solid black;
 }
 .copyright{
   text-align: center;
