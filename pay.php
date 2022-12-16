@@ -107,7 +107,7 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn-black" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn-black" onclick="closeModal()">Cancel</button>
             <button onclick="beginPayment()" type="button" class="btn-black">
               Pay ₦<?php echo $tax ?>
               <span id="loader" class="loader hide"></span>
