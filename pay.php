@@ -41,7 +41,7 @@
   }
 ?>
 
-  <div class="pay-page container">
+  <div class="pay-page container centralize">
     <?php
       $currentMonth = date("F");
       $currentYear = date("Y");
@@ -52,15 +52,19 @@
 
       if ($noOfRows > 0) {
     ?>
+    <div class="not-found">
       <img class="pay-img" src="./imgs/10820.jpg" alt="all done image">
       <h5>Hurray 🎉, You have already paid the taxes for this month.</h5>
+    </div>
     <?php
       } else {
     ?>
+    <div class="fill-screen pay-button-container">
       <img class="pay-img" src="./imgs/Hand holding phone with digital wallet service and sending money.jpg" alt="owe">
       <h5>You owe the government <b>₦</b><b class="tax"><?php echo $tax ?></b> based on your ₦<span class="income"><?php echo $data['income'] ?></span> salary this month</h5>
 
       <button class="btn-black btn-small" onclick="activateModal()">Pay the government</button>
+    </div>
     <?php
       }
 

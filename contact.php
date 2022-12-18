@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-  <div class="container contact-form">
+  <div class="container contact-form fill-screen">
     <form id="contactForm" onsubmit="return false">
       <h4 class="contact-title">Shoot us a mail</h4>
 
@@ -13,7 +13,7 @@
           <input type="email" class="form-control" id="email"  required>
           <label for="email">Email address</label>
         </div>
-  
+
         <div class="form-floating mb-3">
           <input type="text" class="form-control" id="subject" required>
           <label for="subject">Subject</label>

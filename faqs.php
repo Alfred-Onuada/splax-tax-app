@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-<div class="container">
+<div class="container fill-screen">
   <h5 class="faqs-title">Some frequently asked questions?</h5>
 
   <img class="faqs-img" src="./imgs/5066368.jpg" alt="Faqs vector">

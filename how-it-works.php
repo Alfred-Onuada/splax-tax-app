@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-  <div class="container">
+  <div class="container fill-screen">
     <h4>Below is a demo of how online tax systems work</h4>
 
     <div class="steps">
@@ -48,7 +48,7 @@
       <h5>Your estimated tax is: <b>₦<span id="tax">0.00</span></b></h5>
     </div>
 
-  </div>  
+  </div>
 
 <?php
   require_once "./includes/footer.php";

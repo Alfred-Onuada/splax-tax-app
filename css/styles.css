@@ -298,6 +298,12 @@ table > thead > tr > td{
   height: 350px !important;
   width: 500px !important;
 }
+.not-found,
+.centralize{
+  place-items: center;
+  place-content: center;
+  width: 100%;
+}
 .about-us-row{
   display: flex;
   place-items: center;
@@ -308,6 +314,10 @@ table > thead > tr > td{
 .nav{
   flex-direction: row;
   display: flex;
+}
+.pay-button-container{
+  place-content: center;
+  place-items: center;
 }
 
 @media (max-width: 575px) {

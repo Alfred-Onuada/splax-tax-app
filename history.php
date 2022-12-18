@@ -3,19 +3,31 @@
 ?>
 
   <div class="container fill-screen">
-    <h5>Have a look at your tax payment history</h5>
-
     <?php
       if (!isset($_COOKIE['tax_user'])) {
         header('location: ./index.php');
-    
+
         return;
       }
-    
+
       $userId = $_COOKIE['tax_user'];
 
       $sql = "SELECT DISTINCT year FROM `tax_history` WHERE userId = '$userId' ORDER BY year DESC";
       $query = mysqli_query($connection, $sql);
+      $numOfRows = mysqli_num_rows($query);
+
+      if ($numOfRows == 0) {
+    ?>
+    <div class="not-found">
+      <img class="pay-img" src="./imgs/404.jpeg" alt="404">
+      <h5>There is nothing to see here for now.</h5>
+    </div>
+    <?php
+      } else {
+    ?>
+    <h5>Have a look at your tax payment history</h5>
+    <?php
+      }
 
       $lastAccessedYear = '';
 
@@ -41,7 +53,7 @@
               <?php
                 $sql = "SELECT * FROM `tax_history` WHERE userId = '$userId' AND year = '$year'";
                 $taxQuery = mysqli_query($connection, $sql);
-  
+
                 $rowNo = mysqli_num_rows($taxQuery);
                 while ($taxData = mysqli_fetch_assoc($taxQuery)) {
               ?>
@@ -67,7 +79,7 @@
 
       }
     ?>
-   
+
   </div>
 
 <?php

@@ -22,7 +22,7 @@
   $data = mysqli_fetch_assoc($query);
 ?>
 
-  <div class="reg-container container">
+  <div class="reg-container container fill-screen">
     <h4 class="register-text">Update your Taxism account</h4>
 
     <div class="hide response-container" id="response-container"></div>

@@ -1,4 +1,4 @@
-const networkUrl = 'http://192.168.43.178/websites/splax-tax-app';
+const networkUrl = 'http://192.168.102.108/websites/splax-tax-app';
 const localUrl = 'http://localhost/websites/splax-tax-app';
 
 const env = 'LOCAL';
@@ -68,7 +68,7 @@ function register() {
   const email = document.getElementById('email').value;
   const income = +(document.getElementById('income').value);
   const password = document.getElementById('password').value;
-  
+
   const data = {
     firstName,
     lastName,
@@ -87,9 +87,9 @@ function register() {
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
+        killSpinner();
       }
 
-      killSpinner();
     }
   }
 
@@ -105,7 +105,7 @@ function login() {
   activateSpinner();
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  
+
   const data = {
     email,
     password
@@ -121,9 +121,9 @@ function login() {
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
+        killSpinner();
       }
 
-      killSpinner();
     }
   }
 
@@ -143,7 +143,7 @@ function register() {
   const email = document.getElementById('email').value;
   const income = +(document.getElementById('income').value);
   const password = document.getElementById('password').value;
-  
+
   const data = {
     firstName,
     lastName,
@@ -162,9 +162,9 @@ function register() {
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
+        killSpinner();
       }
 
-      killSpinner();
     }
   }
 
@@ -182,7 +182,7 @@ function update() {
   const lastName = document.getElementById('lastName').value;
   const income = +(document.getElementById('income').value);
   const password = document.getElementById('password').value;
-  
+
   const data = {
     firstName,
     lastName,
@@ -200,9 +200,9 @@ function update() {
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
+        killSpinner();
       }
 
-      killSpinner();
     }
   }
 
@@ -259,12 +259,7 @@ function pay() {
   const tax = +(document.getElementById('tax').value);
   const income = +(document.getElementById('income').value);
   const userId = document.getElementById('userId').value;
-  
-  const data = { 
-    tax,
-    userId,
-    income
-  }
+  const cardNumber = document.getElementById('card-number').value;
 
   function handleResponse(http) {
     if (http.readyState === 4) {
@@ -276,15 +271,33 @@ function pay() {
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
+        killSpinner();
       }
 
-      killSpinner();
     }
   }
 
 
   // simulate 3.5 seconds wait time
   setTimeout(() => {
+    if (cardNumber == "6262 6262 6262 6262") {
+      handleError("Transaction couldn't be processed, Insufficient funds");
+      return killSpinner();
+    }
+
+    if (cardNumber != "4242 4242 4242 4242") {
+      handleError("Transaction couldn't be processed please contact your bank");
+
+      return killSpinner();
+    }
+
+
+    const data = {
+      tax,
+      userId,
+      income
+    }
+
     const request = new xhr(baseUrl + '/controllers/payTax.php', handleResponse, 'POST');
     request.send(data);
   }, 3500);
@@ -299,8 +312,8 @@ function contact() {
   const email = document.getElementById('email').value;
   const subject = document.getElementById('subject').value;
   const body = document.getElementById('body').value;
-  
-  const data = { 
+
+  const data = {
     email,
     subject,
     body
@@ -316,9 +329,9 @@ function contact() {
         }, 3500);
       } else {
         handleError(JSON.parse(http.responseText).msg);
+        killSpinner();
       }
 
-      killSpinner();
     }
   }
 
@@ -343,22 +356,16 @@ window.addEventListener('DOMContentLoaded', () => {
   })
 });
 
-if (document.getElementsByClassName('reg-container')) {
-  [].forEach.call(document.getElementsByClassName('reg-container'), (elem) => {
-    elem.style.paddingBottom = '60px';
-    elem.style.paddingTop = '60px';
-  })
-}
-
 if (document.getElementsByClassName('fill-screen')) {
   [].forEach.call(document.getElementsByClassName('fill-screen'), (elem) => {
     elem.style.minHeight = (window.innerHeight - 75) + 'px';
     elem.style.display = 'flex';
     elem.style.flexDirection = 'column';
-    
-    if (/login.php/.test(location.href)) {
+
+    if (/history.php/.test(location.href) == false) {
       elem.style.justifyContent = 'center';
     }
+
   })
 }
 
@@ -369,7 +376,7 @@ if (document.getElementsByClassName('pay-page').length) {
     elem.style.placeItems = 'center';
     elem.style.flexDirection = 'column';
   });
-  
+
   //JQuery
   $('.tax').each(function () {
     $(this).prop('Counter', 0).animate({
@@ -444,7 +451,7 @@ function navEvent() {
   // navbar visible
   if (navbar.classList.contains('navbar-hide') == false) {
     document.body.style.overflowY = 'hidden';
-    
+
     container.addEventListener('click', closeNavOnBodyClick);
   } else {
     document.body.style.overflowY = 'scroll';
@@ -471,15 +478,15 @@ if (inputsOnPage.length) {
   }
 
   [].forEach.call(inputsOnPage, input => {
-    input.addEventListener('focus', () => { 
+    input.addEventListener('focus', () => {
       labelAnimationFunc(input)
     })
 
-    input.addEventListener('blur', () => { 
+    input.addEventListener('blur', () => {
       labelAnimationFunc(input)
     })
 
-    input.addEventListener('keyup', () => { 
+    input.addEventListener('keyup', () => {
       labelAnimationFunc(input)
     })
   })
@@ -522,6 +529,6 @@ function toggleAccordion(elem) {
 
 function activateDropdown() {
   const dropdown = document.getElementById('dropdownMenu');
-  
+
   dropdown.classList.toggle('hide')
 }

@@ -2,7 +2,7 @@
   require_once "./includes/header.php";
 ?>
 
-<div class="container mt-5">
+<div class="container mt-5 fill-screen">
   <h1 class="display-4">Welcome to Taxism</h1>
   <p class="lead">The easy and accurate way to pay your taxes</p>
   <div class="row mt-5">
